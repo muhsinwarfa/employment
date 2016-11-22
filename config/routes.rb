@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  
 
-  root to: 'visitors#index'
+
+  root 'sessions#new' 
+  get 'sessions/new' => 'sessions#new', as: :login
+  get 'sessions/destroy' => 'sessions#destoy', as: :logout
+  get 'users/new' => 'users#new', as: :signup
+  resources :users
+  resources :jobs
+  resources :types
+  resources :roles
+  
+
+  
 end
