@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
 	
 	validates :name , :email , :password , :role_id , presence: true
 	validates :email , uniqueness:  true
-	before_save  {self.email = email.lowercase}
+	before_save  {self.email = email.downcase}
 end

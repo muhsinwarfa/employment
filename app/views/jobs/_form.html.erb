@@ -2,7 +2,27 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  
+
+  
+    <%= f.label :overview %>
+    <%= f.text_area :overview %>
+
+
+    <%= f.label :type_id %>
+    <%= f.number_field :type_id %>
+
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  
+  
+    <%= f.label :filled %>
+    <%= f.check_box :filled %>
   </div>
+ 
 
   <div class="form-actions">
     <%= f.button :submit %>
