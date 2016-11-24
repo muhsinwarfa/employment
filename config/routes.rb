@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :roles
   resources :sessions , only: [:new , :create , :destroy]
 
-  root 'sessions#new' 
+  root 'visitors#index' 
   get 'sessions/new' => 'sessions#new', as: :login
    post 'sessions/new' => 'jobs#index'
   get 'sessions/destroy' => 'sessions#destoy', as: :logout
