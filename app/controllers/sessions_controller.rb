@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+   before_action :session_params, only: [:create]
+
   def new
   end
 
@@ -17,6 +19,12 @@ class SessionsController < ApplicationController
   def destroy 
   	log_out
   	flash[:notice] = 'Logged out'
-  	redirect_to root_path
-end
+  	redirect_to  login_path
+  end
+
+  private
+
+  def session_params
+    params.require(:sessions).permit(:email, :password)
+  end
 end

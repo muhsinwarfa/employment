@@ -8,9 +8,11 @@ Rails.application.routes.draw do
 
   root 'visitors#index' 
   get 'sessions/new' => 'sessions#new', as: :login
-   post 'sessions/new' => 'jobs#index'
-  get 'sessions/destroy' => 'sessions#destoy', as: :logout
+  delete 'sessions/:id' => 'sessions#destoy', as: :logout
   get 'users/new' => 'users#new', as: :signup
+
+
+
   
   
 
